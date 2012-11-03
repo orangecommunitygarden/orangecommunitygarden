@@ -12,7 +12,7 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
-  <body>
+  <body id="<%= data.page.id %>">
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
@@ -24,27 +24,37 @@
 
           <a href="/" class="brand"><img src="/images/logo.png" alt="The Orange Community Garden"></a>
 
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="/committees">Committees</a></li>
-              <li><a href="/rules">Rules</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
+          <ul class="nav">
+            <li><a href="/committees">Committees</a></li>
+            <li><a href="/rules">Rules</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
         </div>
       </div>
     </div>
 
+<% if home? %>
     <%= yield %>
+<% else %>
+    <header class="container">
+      <h1><%= data.page.title %></h1>
+    </header>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
+    <div class="container content">
+      <div class="row">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="span12 footer">
           <p>&copy; 2012 The Orange Community Garden</p>
         </div>
       </div>
     </div>
+<% end %>
     <%= javascript_include_tag  "application" %>
   </body>
 </html>

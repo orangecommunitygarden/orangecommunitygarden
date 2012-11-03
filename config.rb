@@ -41,11 +41,11 @@
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def home?
+    current_page.data.id == 'home'
+  end
+end
 
 set :css_dir, 'stylesheets'
 

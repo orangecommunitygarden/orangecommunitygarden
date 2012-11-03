@@ -3,11 +3,11 @@
 @import "_variables.scss";
 
 body{
+  background: $light;
   font: {
     size: 100%;
     family: $sans-stack;
   }
-  background: rgb(255,255,255);
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
@@ -30,22 +30,36 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-header {
-  margin: 0;
-  width: 100%;
-  height: 800px;
+h1 {
+  padding-top: .25em;
+  line-height: 1.25em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.15);
+  color: $light;
+  font-size: 4em;
+}
+
+#home {
   h1 {
-    margin: 0 auto 0 auto;
-    padding-top: 250px;
-    width: 50%;
-    line-height: 1.25em;
+    margin: 2em auto 0 auto;
+    width: 80%;
     text-align: center;
-    color: #fff;
-    text-shadow: 0 1px 1px rgba(0,0,0,.15);
+    text-shadow: 0 1px 1px rgba(0,0,0,.25);
   }
 }
 
 .footer {
   padding-top: 1em;
   border-top: 1px solid #ccc;
+}
+
+.container {
+}
+
+.content {
+  background: $light;
+  @include border-radius(5px);
+  @include box-shadow(1px 1px 5px rgba(0,0,0,.25));
+  padding: 1em 2em 2em 2em;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
