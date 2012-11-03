@@ -1,3 +1,22 @@
+@import "compass/css3";
+@import "compass/css3/images";
+@import "_variables.scss";
+
+body{
+  font: {
+    size: 100%;
+    family: $sans-stack;
+  }
+  background: rgb(255,255,255);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: {
+    family: $serif-stack;
+  }
+}
 .navbar {
   margin-bottom: 0;
   .brand {
