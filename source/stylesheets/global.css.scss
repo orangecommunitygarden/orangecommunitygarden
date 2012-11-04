@@ -18,6 +18,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h1 {
+  padding-top: .25em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.15);
+  color: $light;
+  font-size: 2.5em;
+}
+
 a, a:visited {
   color: $green;
   text-decoration: none;
@@ -29,7 +36,8 @@ a:hover {
 }
 
 header.container {
-  background: $light;
+  background: $dark;
+  opacity: .85;
   @include border-radius(5px);
   @include box-shadow(1px 1px 5px rgba(0,0,0,.25));
   padding: 1em 4em 2em 4em;
@@ -41,6 +49,7 @@ header.container {
     font-size: 1.25em;
     font-weight: bold;
     padding-right: 1em;
+    color: $light;
     img, span {
       float: left;
     }
@@ -48,50 +57,32 @@ header.container {
       width: 80px;
     }
     span {
-      color: $dark;
       padding-top: 1.5em;
       padding-left: .5em;
-      font-size: 1.5em;
+      font: {
+        size: 1.5em;
+        family: $serif-stack;
+      }
     }
   }
   nav {
     float: right;
-    padding-top: 2.25em;
+    padding-top: 2.5em;
     a {
+      font-size: 1em;
       padding: .5em;
       margin-right: .5em;
       &.active {
         @include border-radius(5px);
-        background: rgba(0,0,0,.05);
+        background: $green;
       }
     }
-  }
-}
-
-h1 {
-  padding-top: .25em;
-  line-height: 1.25em;
-  text-shadow: 0 1px 1px rgba(0,0,0,.15);
-  color: $light;
-  font-size: 3.5em;
-}
-
-#home {
-  h1 {
-    margin: 2em auto 0 auto;
-    width: 70%;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0,0,0,.25);
-    line-height: 1.5em;
   }
 }
 
 .footer {
   color: rgb(255,255,255);
   text-shadow: 0 1px 1px rgba(0,0,0,.25);
-}
-
-.container {
 }
 
 .content {
@@ -101,4 +92,23 @@ h1 {
   padding: 2em 4em;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.heading {
+  background: rgba(0,0,0,.25);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1em 4em 1.5em 4em;
+}
+
+#home {
+  h1 {
+    font-size: 3.5em;
+    text-align: left;
+    line-height: 1.5em;
+  }
+
+  .heading {
+    padding: 2em 4em;
+  }
 }

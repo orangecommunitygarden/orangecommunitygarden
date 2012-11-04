@@ -8,6 +8,11 @@
 
     <%= stylesheet_link_tag "application" %>
 
+    <%= javascript_include_tag  "modernizr.min" %>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    <%= javascript_include_tag  "selectivizr.min" %>
+    <![endif]-->
+
     <script type="text/javascript" src="//use.typekit.net/mjh1jan.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
@@ -29,9 +34,11 @@
     </header>
 
 <% if home? %>
-    <%= yield %>
+    <div class="container heading content">
+      <%= yield %>
+    </div>
 <% else %>
-    <div class="container">
+    <div class="container heading content">
       <h1><%= data.page.title %></h1>
     </div>
 
