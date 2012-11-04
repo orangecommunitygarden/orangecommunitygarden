@@ -4,5 +4,10 @@ $sans-stack: ff-dagny-web-pro, Helvetica, Arial, sans-serif;
 
 // COLOR
 $light: rgba(247,245,244,.95);
-$dark: rgba(0,0,0,1);
-$green: rgba(56,106,54,1);
+$dark: rgba(61,41,42,1);
+$green: rgba(32,76,40,1);
+
+// Links
+// -------------------------
+$linkColor:             $green !default;
+$linkColorHover:        darken($green, 15%) !default;

@@ -13,33 +13,26 @@
   </head>
 
   <body id="<%= data.page.id %>">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+    <header class="container">
+      <a href="/" class="brand">
+        <img src="/images/logo.png" alt="The Orange Community Garden">
+        <span>Orange Community Garden</span>
+      </a>
 
-          <a href="/" class="brand"><img src="/images/logo.png" alt="The Orange Community Garden"></a>
-
-          <ul class="nav">
-            <li><a href="/committees">Committees</a></li>
-            <li><a href="/rules">Rules</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <nav>
+        <a href="/committees">Committees</a>
+        <a href="/rules">Rules</a>
+        <a href="#">Blog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
 
 <% if home? %>
     <%= yield %>
 <% else %>
-    <header class="container">
+    <div class="container">
       <h1><%= data.page.title %></h1>
-    </header>
+    </div>
 
     <div class="container content">
       <div class="row">
@@ -47,12 +40,10 @@
           <%= yield %>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="span12 footer">
-          <p>&copy; 2012 The Orange Community Garden</p>
-        </div>
-      </div>
+    <div class="container footer">
+      <p>&copy; 2012 The Orange Community Garden</p>
     </div>
 <% end %>
     <%= javascript_include_tag  "application" %>
