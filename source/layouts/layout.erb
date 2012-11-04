@@ -20,11 +20,11 @@
       </a>
 
       <nav>
-        <a href="/committees">Committees</a>
-        <a href="/rules">Rules</a>
-        <a href="/photos">Photos</a>
+        <a href="/committees"<%= active?('committees') %>>Committees</a>
+        <a href="/rules"<%= active?('rules') %>>Rules</a>
+        <a href="/photos"<%= active?('photos') %>>Photos</a>
         <a href="#">Blog</a>
-        <a href="/contact">Contact</a>
+        <a href="/contact"<%= active?('contact', 'last') %>>Contact</a>
       </nav>
     </header>
 

@@ -56,7 +56,15 @@ header.container {
   }
   nav {
     float: right;
-    padding-top: 2.75em;
+    padding-top: 2.25em;
+    a {
+      padding: .5em;
+      margin-right: .5em;
+      &.active {
+        @include border-radius(5px);
+        background: rgba(0,0,0,.05);
+      }
+    }
   }
 }
 

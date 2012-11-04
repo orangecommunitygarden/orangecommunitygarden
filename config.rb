@@ -45,6 +45,13 @@ helpers do
   def home?
     current_page.data.id == 'home'
   end
+
+  def active?(id, extra_classes = nil)
+    html_class = []
+    html_class << 'active'if current_page.data.id == id
+    html_class << extra_classes if extra_classes
+    %{ class="#{html_class.join(' ')}"}
+  end
 end
 
 set :css_dir, 'stylesheets'
