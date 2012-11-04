@@ -9,7 +9,6 @@ jQuery ->
     $.getJSON(flickrUrl, (data)->
       $.each(data.photos.photo, (i,item)->
         photoUrl = "http://www.flickr.com/photos/#{item.owner}/#{item.id}"
-        console.log(p_url)
         gallery.append("<li class=\"span2\"><a href=\"#{photoUrl}\" class=\"thumbnail\"><img src=\"#{item.url_q}\"></a></li>")
       )
     )
