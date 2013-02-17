@@ -43,12 +43,16 @@
 # Methods defined in the helpers block are available in templates
 helpers do
   def home?
-    current_page.data.id == 'home'
+    current_page.data.primary == 'home'
+  end
+
+  def gardener_info?
+    current_page.data.primary == 'gardener-info'
   end
 
   def active?(id, extra_classes = nil)
     html_class = []
-    html_class << 'active'if current_page.data.id == id
+    html_class << 'active'if [current_page.data.primary, current_page.data.secondary].include?(id)
     html_class << extra_classes if extra_classes
     %{ class="#{html_class.join(' ')}"}
   end

@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   padding-top: .25em;
   text-shadow: 0 1px 1px rgba(0,0,0,.15);
-  color: $light;
+  color: $dark;
   font-size: 2.5em;
 }
 
@@ -36,44 +36,40 @@ a:hover {
 }
 
 header.container {
-  background: $dark;
-  opacity: .85;
+  background: $light;
   @include border-radius(5px);
   @include box-shadow(1px 1px 5px rgba(0,0,0,.25));
-  padding: 1em 4em 2em 4em;
-  margin-top: 1em;
+  padding: 0 4em;
   margin-bottom: 1em;
+  img {
+    display: block;
+    width: 35%;
+    margin: .5em 0 .75em 0;
+  }
   a {
-    float: left;
-    text-shadow: 0 1px 1px rgba(0,0,0,.15);
-    font-size: 1.25em;
-    font-weight: bold;
-    padding-right: 1em;
-    color: $light;
-    img, span {
-      float: left;
-    }
-    img {
-      width: 80px;
-    }
-    span {
-      padding-top: 1.5em;
-      padding-left: .5em;
+    &.brand {
+      display: block;
+      margin-top: 1.5em;
       font: {
-        size: 1.5em;
+        size: 1.25em;
         family: $serif-stack;
       }
     }
+    text-shadow: 0 1px 1px rgba(0,0,0,.15);
+    font-size: 1.25em;
+    font-weight: bold;
+    color: $dark;
   }
   nav {
-    float: right;
-    padding-top: 2.5em;
+    margin-top: 2em;
     a {
       font-size: 1em;
-      padding: .5em;
+      padding: .25em .5em;
       margin-right: .5em;
       &.active {
         @include border-radius(5px);
+        @include box-shadow(1px 1px 5px rgba(0,0,0,.25));
+        color: $light;
         background: $green;
       }
     }
@@ -103,6 +99,7 @@ header.container {
 
 #home {
   h1 {
+    color: $light;
     font-size: 3.5em;
     text-align: left;
     line-height: 1.5em;
@@ -110,5 +107,17 @@ header.container {
 
   .heading {
     padding: 2em 4em;
+  }
+
+  .backstretch {
+    img {
+      opacity: 1
+    }
+  }
+}
+
+.backstretch {
+  img {
+    opacity: .25
   }
 }

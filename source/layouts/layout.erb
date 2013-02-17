@@ -17,20 +17,26 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
-  <body id="<%= data.page.id %>">
+  <body id="<%= data.page.primary %>">
     <header class="container">
-      <a href="/" class="brand">
-        <img src="/images/logo.png" alt="The Orange Community Garden">
-        <span>Orange Community Garden</span>
-      </a>
-
-      <nav>
-        <a href="/committees/"<%= active?('committees') %>>Committees</a>
-        <a href="/rules/"<%= active?('rules') %>>Rules</a>
-        <a href="/photos/"<%= active?('photos') %>>Photos</a>
-        <a href="#">Blog</a>
-        <a href="/contact/"<%= active?('contact', 'last') %>>Contact</a>
-      </nav>
+      <div class="row">
+        <div class="span5">
+          <a href="/" class="brand">
+            Orange Community Garden
+          </a>
+        </div>
+        <div class="span2">
+          <img src="/images/logo.png" alt="The Orange Community Garden">
+        </div>
+        <div class="span5">
+          <nav class="pull-right">
+            <a href="/gardener-info/"<%= active?('gardener-info') %>>Gardener Info</a>
+            <a href="/photos/"<%= active?('photos') %>>Photos</a>
+            <a href="/faqs/"<%= active?('faqs') %>>FAQs</a>
+            <a href="#">Blog</a>
+            <a href="/contact/"<%= active?('contact', 'last') %>>Contact</a>
+          </nav>
+        </div>
     </header>
 
 <% if home? %>
@@ -38,13 +44,13 @@
       <%= yield %>
     </div>
 <% else %>
-    <div class="container heading content">
-      <h1><%= data.page.title %></h1>
-    </div>
-
     <div class="container content">
       <div class="row">
         <div class="span12">
+          <h1><%= data.page.title %></h1>
+          <% if gardener_info? %>
+          <%= render_partial('/gardener-info-subnav.html.erb') %>
+          <% end %>
           <%= yield %>
         </div>
       </div>
